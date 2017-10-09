@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "系统登录";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section styles{
+    <style>
+        .centerpanel {
+            margin: 0 auto;
+            width: 400px;
+        }
+    </style>
+}
+<div class="centerpanel">
+    <table class="table table-bordered" style="width:600px;margin-top:200px;">
+        <tr>
+            <td colspan="2" style="font-size:30px;font-weight:bold;text-align:center;">登录</td>
+        </tr>
+        <tr>
+            <td>帐号</td>
+            <td>
+                <input type="text" class="form-control" />
+            </td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td>
+                <input type="password" class="form-control" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:right;">
+                <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-user"></i>登录</button>
+            </td>
+        </tr>
+    </table>
+</div>
+@section scripts{
+    <script type="text/javascript">
+
+    </script>
+}
