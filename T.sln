@@ -21,8 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T.Enum", "T.Enum\T.Enum.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T.WCFService", "T.WCFService\T.WCFService.csproj", "{D94CA707-956F-4479-82CE-1DE2916E910F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T.AngularWeb", "T.AngularWeb\T.AngularWeb.csproj", "{BAFABF57-F2D9-4CCB-B0E0-0AA7A78DE50E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,10 +63,6 @@ Global
 		{D94CA707-956F-4479-82CE-1DE2916E910F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D94CA707-956F-4479-82CE-1DE2916E910F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D94CA707-956F-4479-82CE-1DE2916E910F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BAFABF57-F2D9-4CCB-B0E0-0AA7A78DE50E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BAFABF57-F2D9-4CCB-B0E0-0AA7A78DE50E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BAFABF57-F2D9-4CCB-B0E0-0AA7A78DE50E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BAFABF57-F2D9-4CCB-B0E0-0AA7A78DE50E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
