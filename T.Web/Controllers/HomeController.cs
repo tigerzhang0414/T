@@ -16,6 +16,7 @@ namespace T.Web.Controllers
         [LoginAuth]
         public ActionResult Index()
         {
+            
             return View();
         }
 
