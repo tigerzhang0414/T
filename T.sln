@@ -21,10 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T.Enum", "T.Enum\T.Enum.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T.WCFService", "T.WCFService\T.WCFService.csproj", "{D94CA707-956F-4479-82CE-1DE2916E910F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "T.CWinApp", "T.CWinApp\T.CWinApp.vcxproj", "{D923EF79-40B9-48D0-969C-B2004054D465}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "T.CPP", "T.CPP\T.CPP.vcxproj", "{C77B5DB0-C529-4B09-B634-F9EDE549ED3B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,26 +139,6 @@ Global
 		{D94CA707-956F-4479-82CE-1DE2916E910F}.Release|x64.Build.0 = Release|Any CPU
 		{D94CA707-956F-4479-82CE-1DE2916E910F}.Release|x86.ActiveCfg = Release|Any CPU
 		{D94CA707-956F-4479-82CE-1DE2916E910F}.Release|x86.Build.0 = Release|Any CPU
-		{D923EF79-40B9-48D0-969C-B2004054D465}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{D923EF79-40B9-48D0-969C-B2004054D465}.Debug|x64.ActiveCfg = Debug|x64
-		{D923EF79-40B9-48D0-969C-B2004054D465}.Debug|x64.Build.0 = Debug|x64
-		{D923EF79-40B9-48D0-969C-B2004054D465}.Debug|x86.ActiveCfg = Debug|Win32
-		{D923EF79-40B9-48D0-969C-B2004054D465}.Debug|x86.Build.0 = Debug|Win32
-		{D923EF79-40B9-48D0-969C-B2004054D465}.Release|Any CPU.ActiveCfg = Release|Win32
-		{D923EF79-40B9-48D0-969C-B2004054D465}.Release|x64.ActiveCfg = Release|x64
-		{D923EF79-40B9-48D0-969C-B2004054D465}.Release|x64.Build.0 = Release|x64
-		{D923EF79-40B9-48D0-969C-B2004054D465}.Release|x86.ActiveCfg = Release|Win32
-		{D923EF79-40B9-48D0-969C-B2004054D465}.Release|x86.Build.0 = Release|Win32
-		{C77B5DB0-C529-4B09-B634-F9EDE549ED3B}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{C77B5DB0-C529-4B09-B634-F9EDE549ED3B}.Debug|x64.ActiveCfg = Debug|x64
-		{C77B5DB0-C529-4B09-B634-F9EDE549ED3B}.Debug|x64.Build.0 = Debug|x64
-		{C77B5DB0-C529-4B09-B634-F9EDE549ED3B}.Debug|x86.ActiveCfg = Debug|Win32
-		{C77B5DB0-C529-4B09-B634-F9EDE549ED3B}.Debug|x86.Build.0 = Debug|Win32
-		{C77B5DB0-C529-4B09-B634-F9EDE549ED3B}.Release|Any CPU.ActiveCfg = Release|Win32
-		{C77B5DB0-C529-4B09-B634-F9EDE549ED3B}.Release|x64.ActiveCfg = Release|x64
-		{C77B5DB0-C529-4B09-B634-F9EDE549ED3B}.Release|x64.Build.0 = Release|x64
-		{C77B5DB0-C529-4B09-B634-F9EDE549ED3B}.Release|x86.ActiveCfg = Release|Win32
-		{C77B5DB0-C529-4B09-B634-F9EDE549ED3B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
