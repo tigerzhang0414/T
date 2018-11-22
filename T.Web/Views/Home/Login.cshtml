@@ -11,8 +11,8 @@
         }
     </style>
 }
-<div class="centerpanel">
-    <table class="table table-bordered" style="width:600px;margin-top:200px;">
+<div class="centerpanel" id="myApp">
+    <table class="table table-bordered" style="width:400px;margin-top:200px;">
         <tr>
             <td colspan="2" style="font-size:30px;font-weight:bold;text-align:center;">登录</td>
         </tr>
@@ -37,6 +37,11 @@
 </div>
 @section scripts{
     <script type="text/javascript">
-
+        var app = new Vue({
+            el: '#myApp',
+            data: {
+                message: 'Hello Vue!'
+            }
+        })
     </script>
 }
