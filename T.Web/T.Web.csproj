@@ -714,9 +714,25 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\T.Business\T.Business.csproj">
+      <Project>{cf7704f9-ebc9-4203-889d-4bddbb49ad7f}</Project>
+      <Name>T.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\T.Common\T.Common.csproj">
       <Project>{657af6a4-9f1a-4f33-a3aa-83e4ebe1321b}</Project>
       <Name>T.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\T.Convert\T.Convert.csproj">
+      <Project>{3839c2b2-a128-4840-b728-ea6fbafc6bc2}</Project>
+      <Name>T.Convert</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\T.Dto\T.Dto.csproj">
+      <Project>{00f6b661-dea9-42e3-8779-b2cbffc67409}</Project>
+      <Name>T.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\T.Enum\T.Enum.csproj">
+      <Project>{54288934-88cb-4948-b6da-c3d509d9f7ee}</Project>
+      <Name>T.Enum</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

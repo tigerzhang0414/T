@@ -14,7 +14,7 @@ namespace T.Web.App_Start
 {
     public class AutofacConfig
     {
-        public void RegisterAll()
+        public static void RegisterAll()
         {
             var builder = new ContainerBuilder();
             Assembly[] assemblies = Directory.GetFiles(AppDomain.CurrentDomain.RelativeSearchPath, "*.dll").Select(Assembly.LoadFrom).ToArray();

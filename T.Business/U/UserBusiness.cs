@@ -8,10 +8,11 @@ using T.DB;
 using T.Common.Extensions;
 using T.ModelConverter.U;
 using T.Enum.U;
+using T.Common.Interface;
 
 namespace T.Business.U
 {
-    public class UserBusiness
+    public class UserBusiness : IDependency
     {
         /// <summary>
         /// 用户登录

@@ -9,38 +9,54 @@
             margin: 0 auto;
             width: 400px;
         }
+
+        .message {
+            font-size: 14px;
+            color: #ff0000;
+            font-weight: bold;
+        }
     </style>
 }
 <div class="centerpanel" id="myApp">
-    <table class="table table-bordered" style="width:400px;margin-top:200px;">
-        <tr>
-            <td colspan="2" style="font-size:30px;font-weight:bold;text-align:center;">登录</td>
-        </tr>
-        <tr>
-            <td>帐号</td>
-            <td>
-                <input type="text" class="form-control" />
-            </td>
-        </tr>
-        <tr>
-            <td>密码</td>
-            <td>
-                <input type="password" class="form-control" />
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" style="text-align:right;">
-                <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-user"></i>登录</button>
-            </td>
-        </tr>
-    </table>
+    <form role="form" v-on:submit.prevent="Login">
+        <table class="table table-bordered" style="width:400px;margin-top:200px;">
+            <tr>
+                <td colspan="2" style="font-size:30px;font-weight:bold;text-align:center;">登录</td>
+            </tr>
+            <tr>
+                <td>帐号</td>
+                <td>
+                    <input type="text" class="form-control" name="account" v-model="account" />
+                </td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td>
+                    <input type="password" class="form-control" name="password" v-model="password" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:right;">
+                    <span class="message">{{message}}</span>
+                    <button type="submit" class="btn btn-primary" v-on:click="Login()"><i class="glyphicon glyphicon-user"></i>登录</button>
+                </td>
+            </tr>
+        </table>
+    </form>
 </div>
 @section scripts{
     <script type="text/javascript">
         var app = new Vue({
             el: '#myApp',
             data: {
-                message: 'Hello Vue!'
+                message: '',
+                account: "",
+                password: "",
+            },
+            methods: {
+                Login: function () {
+                    alert("account is:" + this.account + " password is:" + this.password);
+                }
             }
         })
     </script>
