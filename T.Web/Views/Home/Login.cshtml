@@ -55,7 +55,12 @@
             },
             methods: {
                 Login: function () {
-                    alert("account is:" + this.account + " password is:" + this.password);
+                    Vue.http.post("UserLogin", { account: this.account, password: this.password })
+                        .then(function () {
+                            if()
+                        }, function () {
+                            alert("系统错误！");
+                        })
                 }
             }
         })

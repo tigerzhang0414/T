@@ -669,6 +669,10 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\vue-resource\dist\vue-resource.common.js" />
+    <Content Include="Scripts\vue-resource\dist\vue-resource.esm.js" />
+    <Content Include="Scripts\vue-resource\dist\vue-resource.js" />
+    <Content Include="Scripts\vue-resource\dist\vue-resource.min.js" />
     <Content Include="Scripts\vue.js_v2.5.17\dist\vue.common.js" />
     <Content Include="Scripts\vue.js_v2.5.17\dist\vue.esm.browser.js" />
     <Content Include="Scripts\vue.js_v2.5.17\dist\vue.esm.js" />
