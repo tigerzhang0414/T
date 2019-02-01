@@ -18,7 +18,7 @@ namespace T.Common.Entities
         /// <summary>
         /// 格式化字符串
         /// </summary>
-        public string formart { get; set; }
+        public string Formart { get; set; }
 
 
         public JsonResultT() { }
@@ -27,8 +27,8 @@ namespace T.Common.Entities
         public JsonResultT(object data, bool time = false)
         {
             this.Data = data;
-            if (time) formart = "yyyy-MM-dd HH:mm:ss";
-            else formart = "yyyy-MM-dd";
+            if (time) Formart = "yyyy-MM-dd HH:mm:ss";
+            else Formart = "yyyy-MM-dd";
         }
 
         /// <summary>
@@ -78,12 +78,14 @@ namespace T.Common.Entities
             var date = new DateTime(1970, 1, 1);
             date = date.AddMilliseconds(long.Parse(match.Groups[1].Value));
             date = date.ToLocalTime();
-            var result = date.ToString(formart);
+            var result = date.ToString(Formart);
             return result;
         }
     }
 
-
+    /// <summary>
+    /// Jsonp返回对象
+    /// </summary>
     public class JsonpResult : JsonResult
     {
         private string _callback = "callback";

@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Attributes\EnumAttributes.cs" />
     <Compile Include="Entities\JsonResultT.cs" />
+    <Compile Include="Entities\XException.cs" />
     <Compile Include="Extensions\JsonExt.cs" />
     <Compile Include="Extensions\MD5Ext.cs" />
     <Compile Include="Interface\ICacheManager.cs" />

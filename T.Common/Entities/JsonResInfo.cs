@@ -14,7 +14,7 @@ namespace T.Common.Entities
         /// <summary>
         /// 成功标记
         /// </summary>
-        public bool Success { get; set; }
+        public bool IsSuccess { get; set; }
 
         /// <summary>
         /// 消息
@@ -28,13 +28,132 @@ namespace T.Common.Entities
 
         public JsonResInfo() { }
 
-        public System.Web.Mvc.JsonResult ToJsonT()
+        #region 成功
+        public JsonResInfo Success()
+        {
+            IsSuccess = true;
+            return this;
+        }
+
+        public JsonResInfo Success(string message = null)
+        {
+            IsSuccess = true;
+            Message = message;
+            return this;
+        }
+
+
+        public JsonResInfo Success(object data = null,string message = null)
+        {
+            IsSuccess = true;
+            Message = message;
+            Data = data;
+            return this;
+        }
+        #endregion
+
+        #region 失败
+        public JsonResInfo Fail(string message)
+        {
+            IsSuccess = false;
+            return this;
+        }
+
+        public JsonResInfo Fail(Exception ex)
+        {
+            IsSuccess = false;
+            if (ex != null)
+            {
+                Message = ex.Message;
+                if (ex.InnerException != null) Message += "内部错误：" + ex.InnerException.Message;
+            }
+            return this;
+        }
+
+        public JsonResInfo Failex(Exception ex)
+        {
+            var x = new XException(ex);
+            IsSuccess = false;
+            Message = x.Message;
+            return this;
+        }
+        #endregion
+
+        #region 返回
+        public System.Web.Mvc.JsonResult Json()
         {
             return new System.Web.Mvc.JsonResult
             {
-                Data = this.Data,
-                
+                Data = this,
+                ContentEncoding = Encoding.UTF8,
+                MaxJsonLength = int.MaxValue,
             };
+        }
+
+        public JsonResultT JsonT()
+        {
+            return new JsonResultT
+            {
+                Data = this.Data,
+                Formart = "yyyy-MM-dd HH:mm:ss",
+                MaxJsonLength = int.MaxValue,
+            };
+        }
+
+
+        public JsonResultT JsonT(bool success = false, string message = null, object data = null)
+        {
+            IsSuccess = success;
+            Message = message;
+            Data = data;
+            return new JsonResultT
+            {
+                Data = this,
+                Formart = "yyyy-MM-dd HH:mm:ss",
+                MaxJsonLength = int.MaxValue,
+            };
+        }
+        #endregion
+    }
+
+    public class JsonResBulk
+    {
+        /// <summary>
+        /// 返回状态：-1：全部失败；0：部分成功；1：成功；
+        /// </summary>
+        public int Status { get; set; } = -1;
+        /// <summary>
+        /// 返回消息
+        /// </summary>
+        public string Message { get; set; }
+        /// <summary>
+        /// 成功数据
+        /// </summary>
+        public List<JsonResInfo> Succeed { get; set; } = new List<JsonResInfo>();
+        /// <summary>
+        /// 失败数据
+        /// </summary>
+        public List<JsonResInfo> Failed { get; set; } = new List<JsonResInfo>();
+
+        public JsonResBulk Success(string message)
+        {
+            Status = 1;
+            Message = message;
+            return this;
+        }
+
+        public JsonResBulk Fail(string message)
+        {
+            Status = -1;
+            Message = message;
+            return this;
+        }
+
+        public JsonResBulk Partial(string message)
+        {
+            Status = 0;
+            Message = message;
+            return this;
         }
     }
 }
