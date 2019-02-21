@@ -9,7 +9,7 @@ using T.Common.Interface;
 
 namespace T.Common.Tools
 {
-    public class MemoryCacheManger : ICacheManager
+    public class MemoryCacheManger : ICacheManager, IDependency
     {
         protected ObjectCache Cache
         {

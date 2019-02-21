@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Attributes\EnumAttributes.cs" />
     <Compile Include="Entities\JsonResultT.cs" />
+    <Compile Include="Entities\LoginUser.cs" />
     <Compile Include="Entities\XException.cs" />
     <Compile Include="Extensions\JsonExt.cs" />
     <Compile Include="Extensions\MD5Ext.cs" />
@@ -84,14 +85,14 @@
     <Compile Include="Entities\JsonResInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\MemoryCacheManger.cs" />
+    <Compile Include="Tools\RandomStringManager.cs" />
     <Compile Include="Tools\SettingManager.cs" />
+    <Compile Include="Tools\WebContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="System\Web\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

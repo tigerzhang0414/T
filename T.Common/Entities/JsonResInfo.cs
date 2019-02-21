@@ -29,12 +29,21 @@ namespace T.Common.Entities
         public JsonResInfo() { }
 
         #region 成功
+        /// <summary>
+        /// 成功
+        /// </summary>
+        /// <returns></returns>
         public JsonResInfo Success()
         {
             IsSuccess = true;
             return this;
         }
 
+        /// <summary>
+        /// 成功
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
         public JsonResInfo Success(string message = null)
         {
             IsSuccess = true;
@@ -42,7 +51,12 @@ namespace T.Common.Entities
             return this;
         }
 
-
+        /// <summary>
+        /// 成功
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
         public JsonResInfo Success(object data = null,string message = null)
         {
             IsSuccess = true;
@@ -53,12 +67,23 @@ namespace T.Common.Entities
         #endregion
 
         #region 失败
+        /// <summary>
+        /// 失败
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
         public JsonResInfo Fail(string message)
         {
             IsSuccess = false;
+            Message = message;
             return this;
         }
 
+        /// <summary>
+        /// 失败
+        /// </summary>
+        /// <param name="ex"></param>
+        /// <returns></returns>
         public JsonResInfo Fail(Exception ex)
         {
             IsSuccess = false;
@@ -70,6 +95,11 @@ namespace T.Common.Entities
             return this;
         }
 
+        /// <summary>
+        /// 失败-出错
+        /// </summary>
+        /// <param name="ex"></param>
+        /// <returns></returns>
         public JsonResInfo Failex(Exception ex)
         {
             var x = new XException(ex);
@@ -80,6 +110,10 @@ namespace T.Common.Entities
         #endregion
 
         #region 返回
+        /// <summary>
+        /// 转换为JsonResult
+        /// </summary>
+        /// <returns></returns>
         public System.Web.Mvc.JsonResult Json()
         {
             return new System.Web.Mvc.JsonResult
@@ -90,6 +124,10 @@ namespace T.Common.Entities
             };
         }
 
+        /// <summary>
+        /// 转换为JsonResultT
+        /// </summary>
+        /// <returns></returns>
         public JsonResultT JsonT()
         {
             return new JsonResultT
@@ -100,7 +138,13 @@ namespace T.Common.Entities
             };
         }
 
-
+        /// <summary>
+        /// 转换为JsonResultT
+        /// </summary>
+        /// <param name="success"></param>
+        /// <param name="message"></param>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public JsonResultT JsonT(bool success = false, string message = null, object data = null)
         {
             IsSuccess = success;

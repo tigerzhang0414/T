@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using T.Web.Frameworks;
 using T.Business.U;
+using T.Common.Entities;
 
 namespace T.Web.Controllers
 {
@@ -49,10 +50,20 @@ namespace T.Web.Controllers
         [HttpPost]
         public JsonResult UserLogin(string account, string password)
         {
-            if (string.IsNullOrEmpty(account)) return Json(new { IsSuccess = false, Message = "帐号不能为空！" });
-            if (string.IsNullOrEmpty(password)) return Json(new { IsSuccess = false, Message = "密码不能为空！" });
+            var resInfo = new JsonResInfo();
+
+            if (string.IsNullOrEmpty(account)) resInfo.Fail("帐号不能为空！");
+            if (string.IsNullOrEmpty(password)) resInfo.Fail("密码不能为空！");
             var login_result = _userBusiness.Login(account, password);
-            return Json(new { IsSuccess = login_result.Item1, Message = login_result.Item3 });
+            if (login_result.Item1)
+            {
+                resInfo.Success(login_result.Item2, login_result.Item3);
+            }
+            else
+            {
+                resInfo.Fail(login_result.Item3);
+            }
+            return resInfo.JsonT();
         }
     }
 }

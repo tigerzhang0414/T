@@ -20,19 +20,19 @@ namespace T.ModelConverter.U
         /// <returns></returns>
         public static U_LoginUser ToDataModel(this LoginUser loginUser)
         {
-            var u = new U_LoginUser();
-
-            u.Id = loginUser.Id;
-            u.Account = loginUser.Account;
-            u.NikiName = loginUser.NikiName;
-            u.RealName = loginUser.RealName;
-            u.Email = loginUser.Email;
-            u.Mobile = loginUser.Mobile;
-            u.RegistTime = loginUser.RegistTime;
-            u.RegistIp = loginUser.RegistIp;
-            u.Status = loginUser.Status;
-            u.LastLoginTime = loginUser.LastLoginTime;
-            return u;
+            return new U_LoginUser
+            {
+                Id              = loginUser.Id,
+                Account         = loginUser.Account,
+                NikiName        = loginUser.NikiName,
+                RealName        = loginUser.RealName,
+                Email           = loginUser.Email,
+                Mobile          = loginUser.Mobile,
+                RegistTime      = loginUser.RegistTime,
+                RegistIp        = loginUser.RegistIp,
+                Status          = loginUser.Status,
+                LastLoginTime   = loginUser.LastLoginTime,
+            };
         }
 
         /// <summary>
@@ -40,21 +40,38 @@ namespace T.ModelConverter.U
         /// </summary>
         /// <param name="loginUser"></param>
         /// <returns></returns>
-        public static LoginUser ToBusinessModel(this U_LoginUser loginUser)
+        public static T.Dto.U.LoginUser ToBusinessModel(this U_LoginUser loginUser)
         {
-            var u = new LoginUser();
+            return new LoginUser
+            {
+                Id              = loginUser.Id,
+                Account         = loginUser.Account,
+                NikiName        = loginUser.NikiName,
+                RealName        = loginUser.RealName,
+                Email           = loginUser.Email,
+                Mobile          = loginUser.Mobile,
+                RegistTime      = loginUser.RegistTime,
+                RegistIp        = loginUser.RegistIp,
+                Status          = loginUser.Status,
+                LastLoginTime   = loginUser.LastLoginTime,
+            };
+        }
 
-            u.Id = loginUser.Id;
-            u.Account = loginUser.Account;
-            u.NikiName = loginUser.NikiName;
-            u.RealName = loginUser.RealName;
-            u.Email = loginUser.Email;
-            u.Mobile = loginUser.Mobile;
-            u.RegistTime = loginUser.RegistTime;
-            u.RegistIp = loginUser.RegistIp;
-            u.Status = loginUser.Status;
-            u.LastLoginTime = loginUser.LastLoginTime;
-            return u;
+        public static T.Common.Entities.LoginUser ToWebContextModel(this T.Dto.U.LoginUser user)
+        {
+            return new T.Common.Entities.LoginUser
+            {
+                Id              = user.Id,
+                Account         = user.Account,
+                NikiName        = user.NikiName,
+                RealName        = user.RealName,
+                Email           = user.Email,
+                Mobile          = user.Mobile,
+                RegistTime      = user.RegistTime,
+                RegistIp        = user.RegistIp,
+                Status          = (int)user.Status,
+                LastLoginTime   = user.LastLoginTime,
+            };
         }
     }
 }
