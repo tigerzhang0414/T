@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     <!--#region jQuery-->
-    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    @*<script src="~/Scripts/jquery-3.1.1.min.js"></script>*@
+    <script src="~/Content/assets/jquery-easyui-1.7.5/jquery.min.js"></script>
     <!--#endregion-->
     <!--#region bootstrap-->
     <link href="~/Content/assets/bootstrap-3.3.7/dist/css/bootstrap.css" rel="stylesheet" />
@@ -17,6 +18,11 @@
     <!--#endregion-->
     <!--#region vue-resource-->
     <script src="~/Scripts/vue-resource/dist/vue-resource.js"></script>
+    <!--#endregion-->
+    <!--#region easyui-->
+    <link href="~/Content/assets/jquery-easyui-1.7.5/themes/metro/easyui.css" rel="stylesheet" />
+    <link href="~/Content/assets/jquery-easyui-1.7.5/themes/icon.css" rel="stylesheet" />
+    <script src="~/Content/assets/jquery-easyui-1.7.5/jquery.easyui.min.js"></script>
     <!--#endregion-->
     @RenderSection("styles", required: false)
 </head>
