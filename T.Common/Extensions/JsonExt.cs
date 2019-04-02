@@ -33,5 +33,20 @@ namespace T.Common.Extensions
         {
             return JsonConvert.DeserializeObject<T>(strJson);
         }
+
+        /// <summary>
+        /// 将对象序列化为JSON字符串，忽略循环引用（Newtonsoft.Json）
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string ToJson<T>(this T value)
+        {
+            JsonSerializerSettings jss = new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            };
+            return JsonConvert.SerializeObject(value, jss);
+        }
     }
 }

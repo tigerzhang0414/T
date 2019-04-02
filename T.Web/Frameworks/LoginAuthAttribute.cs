@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using T.Common.Tools;
 using T.Web.Models;
 
 namespace T.Web.Frameworks
@@ -12,10 +13,10 @@ namespace T.Web.Frameworks
     {
         public void OnAuthorization(AuthorizationContext filterContext)
         {
-            if (Current.LoginUser == null)
+            if (WebContext.Current == null || WebContext.Current.User == null)
             {
                 var url = "/Home/Login";
-                filterContext.Result = new RedirectResult(url,false);
+                filterContext.Result = new RedirectResult(url, false);
             }
         }
     }

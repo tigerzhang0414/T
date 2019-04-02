@@ -8,10 +8,12 @@ using T.DB;
 using T.Common.Extensions;
 using T.ModelConverter.U;
 using T.Enum.U;
+using T.Common.Interface;
+using T.Common.Tools;
 
 namespace T.Business.U
 {
-    public class UserBusiness
+    public class UserBusiness : IDependency
     {
         /// <summary>
         /// 用户登录
@@ -42,8 +44,19 @@ namespace T.Business.U
             var db_LoginUser = dtx.U_LoginUser.FirstOrDefault(f => f.Account == account);
             if (db_LoginUser == null) { loginStatus = false; msg = "用户不存在！"; }//用户不存在
             else if (db_LoginUser.Password != md5Password) { loginStatus = false; msg = "密码错误！"; }//密码错误
-            else if (db_LoginUser.Status == UserStatusEnum.Disable) { loginStatus = false; msg = "用户已禁用！"; }//用户已禁用
-            else { loginStatus = true; u = db_LoginUser.ToBusinessModel(); msg = "登录成功！"; }//登录成功
+            else if (db_LoginUser.Status == UserStatusEnum.Disable)
+            {
+                loginStatus = false;
+                msg = "用户已禁用！";
+            }//用户已禁用
+            else
+            {
+                loginStatus = true;
+                u = db_LoginUser.ToBusinessModel();
+                msg = "登录成功！";
+
+                WebContext.SetContext(u.ToWebContextModel());
+            }//登录成功
             return (loginStatus, u, msg);
         }
     }
